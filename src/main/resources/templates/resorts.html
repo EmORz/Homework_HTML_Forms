@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Курорти</title>
+</head>
+<body>
+<h1>Всички курорти</h1>
+<table border="1">
+<tr>
+    <th>Име</th>
+    <th>Държава</th>
+    <th>Тип</th>
+</tr>
+    <tr th:each="resort : ${resorts}">
+        <td th:text="${resort.name}"></td>
+        <td th:text="${resort.country}"></td>
+        <td th:text="${resort.type}"></td>
+    </tr>
+</table>
+<a href="/resorts/add">Добавяне на нов курорт</a>
+
+</body>
+</html>

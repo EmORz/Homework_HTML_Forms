@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Всички хотели</title>
+</head>
+<body>
+<h1>Hotels</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Име</th>
+        <th>Бр. Стаи</th>
+        <th>Бр. звезди</th>
+        <th>Има ли СПА?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hotel : ${hotels}">
+        <td th:text="${hotel.name}"></td>
+        <td th:text="${hotel.numberOfRooms}"></td>
+        <td th:text="${hotel.numberOfStars}"></td>
+        <td th:text="${hotel.hasSPA}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/hotels/add">Add Hotel</a>
+</body>
+</html>

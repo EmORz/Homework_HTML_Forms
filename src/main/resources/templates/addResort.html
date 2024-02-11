@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавяне на курорт</title>
+</head>
+<body>
+<h1>Добавяне на нов курорт</h1>
+<form action="/resorts" method="post">
+    <div>
+        <label for="name">Име:</label>
+        <input type="text" id="name" name="name" th:value="${resort.name}">
+    </div>
+    <div>
+        <label for="country">Държава:</label>
+        <input type="text" id="country" name="country" th:value="${resort.country}">
+    </div>
+    <div>
+        <label for="type">Тип:</label>
+        <select id="type" name="type" th:value="${resort.type}">
+            <option value="zimen">Зимен</option>
+            <option value="leten">Летен</option>
+            <option value="drug">Друг</option>
+        </select>
+    </div>
+    <button type="submit">Добавяне</button>
+</form>
+</body>
+</html>
