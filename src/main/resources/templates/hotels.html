@@ -13,6 +13,7 @@
         <th>Бр. Стаи</th>
         <th>Бр. звезди</th>
         <th>Има ли СПА?</th>
+        <th>Курорт - Тип</th>
     </tr>
     </thead>
     <tbody>
@@ -21,9 +22,13 @@
         <td th:text="${hotel.numberOfRooms}"></td>
         <td th:text="${hotel.numberOfStars}"></td>
         <td th:text="${hotel.hasSPA}"></td>
+        <td th:if="${hotel.resort != null}" th:text="|${hotel.resort.name} - ${hotel.resort.type}}|"></td>
+        <td th:if="${hotel.resort == null}">Няма курорт</td>
     </tr>
     </tbody>
 </table>
 <a href="/hotels/add">Add Hotel</a>
+<footer th:insert="fragments/footer :: footer">
+</footer>
 </body>
 </html>
